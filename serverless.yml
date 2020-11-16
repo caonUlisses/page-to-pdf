@@ -1,0 +1,36 @@
+service: page-to-pdf
+frameworkVersion: '2'
+provider:
+  name: aws
+  runtime: python3.6
+  region: sa-east-1
+  stage: production
+  apiGateway:
+    binaryMediaTypes:
+      - "application/pdf"
+plugins:
+  - serverless-domain-manager
+custom:
+  customDomain:
+    rest:
+      domainName: pagetopdf.clippfacil.com.br
+      certificateName: '*.clippfacil.com.br'
+      hostZoneId: 'ZEAQCS95W4ION'
+      endpointType: regional
+      securityPolicy: tls_1_2
+      basePath: ''
+      apiType: rest
+      createRoute53Record: true
+package:
+  exclude:
+    - node_modules/**
+  excludeDevDependencies: true
+functions:
+  convert:
+    handler: handler.convert
+    events:
+      - http:
+          path: pdf
+          method: get
+          cors: true
+

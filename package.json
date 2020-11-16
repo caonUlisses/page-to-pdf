@@ -1,0 +1,14 @@
+{
+  "name": "page-to-pdf",
+  "version": "1.0.0",
+  "description": "Transforma páginas web em pdf",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless-domain-manager": "^5.1.0"
+  }
+}
