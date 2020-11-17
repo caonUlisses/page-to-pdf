@@ -11,6 +11,7 @@ provider:
 plugins:
   - serverless-domain-manager
   - serverless-python-requirements
+  - serverless-offline
 custom:
   pythonRequirements:
      dockerizePip: non-linux
@@ -29,8 +30,8 @@ package:
     - node_modules/**
   excludeDevDependencies: true
 functions:
-  convert:
-    handler: handler.convert
+  get:
+    handler: handler.get
     events:
       - http:
           path: pdf
