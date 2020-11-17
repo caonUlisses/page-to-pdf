@@ -17,12 +17,21 @@ A lib `pdfkit` é utilizada (ainda que não mais mantida) por ser compatível co
 
 Será necessário instalar o Serverless Framework, [pelo link acima](#estrutura).
 
-### Tradicional
+### Node
+
+Na raiz do projeto, execute:
+```
+npm install
+```
+
+### Python
+
+#### Tradicional
 
 Com o python e pip instalados:
 `pip install -r requirements.txt`
 
-### Com pipenv
+#### Com pipenv
 
 Para instalar todas as dependências, instale o [pipenv](https://pipenv-fork.readthedocs.io/), seguindo as instruções para seu sistema operacional, depois, na pasta do projeto, rode um `pipenv install` e estará pronto!
 
@@ -32,7 +41,16 @@ Na raiz do projeto, execute o comando `make` ou `make deploy` e pronto.
 ## Rodar testes
 
 Instale o `pytest` com o comando `pip install -U pytest` (caso use pipenv, só usar um `pipenv install`).
+
 Utilize o comando `pytest` na raiz do projeto para rodar os testes.
+
+## Fazer deploy em novo ambiente
+Basta editar o `serverless.yml` conforme necessário, baixar as dependências.
+
+**Caso queira mudar o nome do serviço, ou domínio, execute:**
+```
+sls create_domain
+```
 
 ## Dúvidas? Bugs? Raiva? Feedback?
 ulissescaon@gmail.com
