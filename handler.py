@@ -29,9 +29,9 @@ def convert(page: str) -> str:
 
 def get(event, context) -> dict:
     '''Trabalha a requisição para converter e responder com HTTP'''
-    if event["queryStringParameters"]["reportUrl"]
+    if event["queryStringParameters"]["reportUrl"]:
         page: str = event["queryStringParameters"]["reportUrl"]
-    else
+    else:
         page: str = ""
 
     converted: str = convert(page)
