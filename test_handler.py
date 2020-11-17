@@ -13,6 +13,7 @@ def test_convert():
     assert handler.convert != None
 
 def get():
+    # TODO: ajustar mock e fazer um teste funcional
     params = {
         "queryStringParameters": {
             "reportUrl": "https://google.com"
