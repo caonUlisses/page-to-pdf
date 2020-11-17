@@ -10,7 +10,10 @@ provider:
       - "application/pdf"
 plugins:
   - serverless-domain-manager
+  - serverless-python-requirements
 custom:
+  pythonRequirements:
+     dockerizePip: non-linux
   customDomain:
     rest:
       domainName: pagetopdf.clippfacil.com.br
