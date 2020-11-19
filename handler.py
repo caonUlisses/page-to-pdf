@@ -30,12 +30,11 @@ def convert(page: str) -> str:
 
 def get(event, context) -> dict:
     '''Trabalha a requisição para converter e responder com HTTP'''
-    print('here')
     if event["queryStringParameters"] and event["queryStringParameters"]["reportUrl"]:
         page: str = event["queryStringParameters"]["reportUrl"]
     else:
         page: str = "www.google.com"
 
     converted: str = convert(page)
-    return format(converted)
+    return format_response(converted)
 
