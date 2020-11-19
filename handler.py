@@ -26,10 +26,11 @@ def convert(page: str) -> str:
     '''Converte a página para PDF'''
     pdfkit.from_url(page, PDF_PATH)
     text = open(PDF_PATH, 'rb').read()
-    return base64.b64encode(text)
+    return base64.b64encode(text).decode('utf-8')
 
 def get(event, context) -> dict:
     '''Trabalha a requisição para converter e responder com HTTP'''
+    print('here')
     if event["queryStringParameters"] and event["queryStringParameters"]["reportUrl"]:
         page: str = event["queryStringParameters"]["reportUrl"]
     else:
@@ -37,3 +38,4 @@ def get(event, context) -> dict:
 
     converted: str = convert(page)
     return format(converted)
+
