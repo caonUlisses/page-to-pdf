@@ -1,7 +1,5 @@
-import json
 import os
 import base64
-import uuid
 import pdfkit
 
 PDF_PATH = '/tmp/out.pdf'
@@ -28,7 +26,7 @@ def convert(page: str) -> str:
     text = open(PDF_PATH, 'rb').read()
     return base64.b64encode(text).decode('utf-8')
 
-def get(event, context) -> dict:
+def get(event, _) -> dict:
     '''Trabalha a requisição para converter e responder com HTTP'''
     if event["queryStringParameters"] and event["queryStringParameters"]["reportUrl"]:
         page: str = event["queryStringParameters"]["reportUrl"]
