@@ -2,7 +2,7 @@ service: page-to-pdf
 frameworkVersion: '3'
 provider:
   name: aws
-  runtime: python3.6
+  runtime: python3.9
   region: sa-east-1
   stage: production
   apiGateway:
@@ -17,9 +17,9 @@ custom:
      dockerizePip: non-linux
   customDomain:
     rest:
-      domainName: pagetopdf.clippfacil.com.br
-      certificateName: '*.clippfacil.com.br'
-      hostZoneId: 'ZEAQCS95W4ION'
+      domainName: {your_domain}
+      certificateName: {your_certificate}
+      hostZoneId: {your_zone_id}
       endpointType: regional
       securityPolicy: tls_1_2
       basePath: ''
