@@ -10,7 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "serverless-domain-manager": "^6.0.3",
-    "serverless-offline": "^8.8.1",
+    "serverless-offline": "^14.3.2",
     "serverless-python-requirements": "^5.4.0"
   }
 }
